@@ -1,17 +1,55 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      LISTADO DE PRODUCTOS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <br>
+  <div class="container" style="border: rgb(188,207,0) solid 3px;  border-radius: 8px ; padding: 20px; background-color: white;">
+  <ion-row>
+    <ion-col style="color: black;" ><b>Nombre</b><ion-input [(ngModel)]="producto.nombre" id="txtNombre"
+        style="border: rgb(188,207,0) solid 2px;  border-radius: 8px ; font-family: 'Times New Roman', Times, serif; font-size: 20px;"></ion-input>
+    </ion-col>
+    <ion-col style="color: black;"><b>DESCRIPCION</b><ion-input [(ngModel)]="producto.descripcion" id="txtDescripcion"
+        style="border: rgb(188,207,0) solid 2px;  border-radius: 8px ; font-family: 'Times New Roman', Times, serif; font-size: 20px;"></ion-input>
+    </ion-col>
+  </ion-row>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-row>
+    <ion-col style="color: black;"><b>PRECIO</b><ion-input [(ngModel)]="producto.precio" id="txtPrecio"
+      style="border: rgb(188,207,0) solid 2px;  border-radius: 8px ;font-family: 'Times New Roman', Times, serif; font-size: 20px;"></ion-input>
+    </ion-col>
+    <ion-col style="color: black;"><b>STOCK</b><ion-input [(ngModel)]="producto.stock" id="txtStock"
+      style="border: rgb(188,207,0) solid 2px;  border-radius: 8px ;font-family: 'Times New Roman', Times, serif; font-size: 20px;"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+
+    <button  style="background-color:rgb(188,207,0) ;border-radius: 8px" round (click)="agregarProducto();" >GUARDAR <ion-icon name="checkmark-done-outline"></ion-icon></button>
+  </ion-col>
+
+  </ion-row>
+<hr>
+</div>
+  <ion-list>
+    <ion-list-header>
+      Productos
+    </ion-list-header>
+    <ion-item *ngFor="let producto of lista">
+      <ion-avatar slot="start">
+        <img  src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"  >
+
+      </ion-avatar>
+      <ion-label>
+        <h2>{{producto.nombre}}</h2>
+        <h3>{{producto.descripcion}}</h3>
+        <p>{{producto.precio}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
 </ion-content>

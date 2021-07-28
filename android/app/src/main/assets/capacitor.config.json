@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Calculadora apk",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,5 +1,7 @@
 {
   "name": "Calculadora apk",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

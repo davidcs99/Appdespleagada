@@ -1,17 +1,138 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Calculadora
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid style="background-color: black;">
+    <ion-row>
+      <ion-col>
+        <ion-input disabled [(ngModel)]="numeroConcatenar"
+          style="border: whitesmoke solid 2px; font-family: 'Times New Roman', Times, serif; font-size: 30px; color: white; text-align: end;">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="operacionesBasicas('%')" shape="round" color="dark">%
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="metodoCE()" shape="round" color="dark">CE</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="metodoC()" shape="round" color="dark">C</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="erase()" shape="round" color="dark">Limpiar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="operacionInver('1/x')"shape="round" color="warning">1/x
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="operacionPotenciacion('x^2')" shape="round" color="warning">x^2
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="operacionRaiz('√')"shape="round" color="warning">√
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="operacionesBasicas('/')"shape="round" color="warning">/
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full"  shape="round" color="light" (click)="concatenarNumero('7')"
+          style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">7
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" shape="round" color="light" (click)="concatenarNumero('8')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">8
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full"  shape="round" color="light" (click)="concatenarNumero('9')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">9
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" expand="full" (click)="operacionesBasicas('*')" shape="round" color="warning">X
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full"  shape="round" color="light" (click)="concatenarNumero('4')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">4
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" shape="round" color="light" (click)="concatenarNumero('5')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">5
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  expand="full" shape="round" color="light" (click)="concatenarNumero('6')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">6
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="operacionesBasicas('-')" shape="round" color="warning">-
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button  expand="full" shape="round" color="light" (click)="concatenarNumero('1')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">1
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  expand="full" shape="round" color="light" (click)="concatenarNumero('2')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">2
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  expand="full" shape="round" color="light" (click)="concatenarNumero('3')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">3
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="operacionesBasicas('+')" shape="round" color="warning">+
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button  expand="full" shape="round" color="light" (click)="operacionInv('+/-')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">+/-
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" shape="round" color="light" (click)="concatenarNumero('0')"
+        style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 18px;">0
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="concatenarNumero('.')" shape="round" color="light">.
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" (click)="operacionesBasicas('=')" shape="round" color="warning">=
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
