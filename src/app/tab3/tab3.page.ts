@@ -11,6 +11,7 @@ export class Tab3Page {
   y: number;
   z: number;
   constructor(public motionservice: MotionService) {}
+  // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
   ngOnInit(): void {
   }
 
